@@ -10,3 +10,14 @@ std::string Token::to_string()
     t_str += ")";
     return t_str;
 }
+
+bool full{false};
+Token buffer;
+
+void putback(Token t)
+{
+    if (full)
+        throw Buffer_full_error();
+    buffer = t;
+    full = true;
+}

@@ -19,10 +19,10 @@ double term()
     while (true)
     {
         Token t = get();
-        if (t.type == '+')
-            left += primary();
-        if (t.type == '-')
-            left -= primary();
+        if (t.type == '*')
+            left *= primary();
+        if (t.type == '/')
+            left /= primary();
         else
         {
             putback(t);

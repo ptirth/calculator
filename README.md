@@ -5,7 +5,6 @@ stream. It uses `std::cin` to read from console input and create meaningful toke
 
 # Usage Example
 ```bash
-calculator
 Calculator v0.1.0
 > 2+(3*2);
  = 8

@@ -19,16 +19,26 @@ double term()
     while (true)
     {
         Token t = get();
-        if (t.type == '*')
-            left *= primary();
-        if (t.type == '/')
-            left /= primary();
-        else
+        switch (t.type)
         {
-            putback(t);
+        case '*':
+        {
+            left *= primary();
             break;
         }
+        case '/':
+        {
+            left /= primary();
+            break;
+        }
+        default:
+        {
+            putback(t);
+            goto end_of_term;
+        }
+        }
     }
+    end_of_term: ;
     return left;
 }
 

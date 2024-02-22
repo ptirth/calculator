@@ -31,3 +31,32 @@ double term()
     }
     return left;
 }
+
+double expression()
+{
+    double left{term()};
+    while (true)
+    {
+        Token t = get();
+        switch (t.type)
+        {
+        case '+':
+        {
+            left += term();
+            break;
+        }
+        case '-':
+        {
+            left -= term();
+            break;
+        }
+        case ';':
+        case ')':
+            goto end_of_exp;
+        default:
+            throw Bad_operator_error();
+        }
+    }
+    end_of_exp: ;
+    return left;
+}

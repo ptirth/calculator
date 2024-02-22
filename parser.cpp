@@ -5,12 +5,15 @@ double primary()
 {
     Token t = get();
 
-    if (t.type == '8')
+    switch (t.type)
+    {
+    case '8':
         return t.value;
-    else if (t.type == '(')
+    case '(':
         return expression();
-    else
+    default:
         throw Bad_expression_error();
+    }
 }
 
 double term()

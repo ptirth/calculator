@@ -1,7 +1,11 @@
 #include <string>
 
-class Bad_token_error {};
-class Buffer_full_error {};
+class Bad_token_error
+{
+};
+class Buffer_full_error
+{
+};
 
 class Token
 {

@@ -22,5 +22,5 @@ int main()
         double result{expression()};
         cout << " = " << result << '\n';
     }
-    program_end: ;
+program_end:;
 }

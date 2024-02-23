@@ -41,7 +41,7 @@ double term()
         }
         }
     }
-    end_of_term: ;
+end_of_term:;
     return left;
 }
 
@@ -70,6 +70,6 @@ double expression()
             throw Bad_operator_error();
         }
     }
-    end_of_exp: ;
+end_of_exp:;
     return left;
 }
